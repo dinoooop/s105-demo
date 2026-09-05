@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 40" height="40" role="img" aria-label="Granite Peak">
+  <polygon points="17,6 27,30 7,30" fill="#33475B" opacity="0.45" />
+  <polygon points="9,10 19,30 -1,30" fill="#33475B" transform="translate(2,0)" />
+  <text x="38" y="27" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="18" letter-spacing="0.2" fill="#33475B">Granite Peak</text>
+</svg>

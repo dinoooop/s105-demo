@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 145 40" height="40" role="img" aria-label="Meridian">
+  <g fill="none" stroke="#33475B" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <polygon points="15,6 27,32 3,32" />
+  </g>
+  <circle cx="15" cy="6" r="2.4" fill="#33475B" />
+  <text x="38" y="27" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="18" letter-spacing="0.2" fill="#33475B">Meridian</text>
+</svg>

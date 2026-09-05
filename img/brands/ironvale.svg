@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" height="40" role="img" aria-label="Ironvale">
+  <g fill="#33475B">
+    <rect x="2" y="5" width="24" height="5" rx="1.5" />
+    <rect x="2" y="30" width="24" height="5" rx="1.5" />
+    <rect x="11.5" y="5" width="5" height="30" rx="1.5" />
+  </g>
+  <text x="36" y="27" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="18" letter-spacing="0.2" fill="#33475B">Ironvale</text>
+</svg>
