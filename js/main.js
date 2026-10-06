@@ -1,5 +1,5 @@
 /* ==========================================================================
-   DEMO Hardware — Home Page Scripts (jQuery)
+   METALTEC GROUP — Home Page Scripts (jQuery)
    ========================================================================== */
 (function ($) {
   "use strict";
@@ -10,7 +10,12 @@
     /* WOW.js init — scroll reveal animations                             */
     /* ------------------------------------------------------------------ */
     if (typeof WOW !== "undefined") {
-      new WOW({ live: false, offset: 60 }).init();
+      // Animate.css v4 prefixes its classes, so WOW must toggle "animate__animated"
+      new WOW({
+        animateClass: "animate__animated",
+        live: false,
+        offset: 60
+      }).init();
     }
 
     /* ------------------------------------------------------------------ */
@@ -55,13 +60,17 @@
     /* ------------------------------------------------------------------ */
     /* Active nav link on scroll (simple scrollspy)                       */
     /* ------------------------------------------------------------------ */
-    var $navLinks = $(".main-nav a");
+    var $navLinks = $(".main-nav .nav-link-item");
     var $sections = $navLinks.map(function () {
       var target = $($(this).attr("href"));
       return target.length ? target : null;
     });
 
     function updateActiveNav() {
+      // Inner pages (e.g. contact.html) link to index.html#section and set
+      // the active link in markup, so there is nothing to spy on.
+      if (!$sections.length) return;
+
       var scrollPos = $(window).scrollTop() + 160;
       var activeIndex = -1;
 
@@ -101,12 +110,14 @@
     /* ------------------------------------------------------------------ */
     $('a[href^="#"]').on("click", function (e) {
       var hash = $(this).attr("href");
-      if (hash === "#" || hash === "#top") return;
+      if (hash === "#") return;
       var $target = $(hash);
       if ($target.length) {
         e.preventDefault();
         var offset = $(window).width() < 768 ? 78 : 104;
-        $("html, body").animate({ scrollTop: $target.offset().top - offset }, 700);
+        // "#top" (Home / logo) scrolls to the very top rather than to the <main> offset
+        var scrollTo = hash === "#top" ? 0 : $target.offset().top - offset;
+        $("html, body").animate({ scrollTop: scrollTo }, 700);
 
         // close mobile offcanvas if open
         var $offcanvas = $(".offcanvas.show");
@@ -190,8 +201,18 @@
     applyParallax();
 
     /* ------------------------------------------------------------------ */
+    /* Product gallery - thumbnails swap the main image                   */
+    /* ------------------------------------------------------------------ */
+    $("[data-gallery-thumb]").on("click", function () {
+      var $thumb = $(this);
+      $("#galleryMain").attr({ src: $thumb.data("src"), alt: $thumb.data("alt") });
+      $("[data-gallery-thumb]").removeClass("is-active");
+      $thumb.addClass("is-active");
+    });
+
+    /* ------------------------------------------------------------------ */
     /* Form UX — prevent default submit, show inline confirmation         */
-    /* (no backend wired up in this static demo)                          */
+    /* (no backend wired up in this static site)                          */
     /* ------------------------------------------------------------------ */
     $("#quoteForm").on("submit", function (e) {
       e.preventDefault();
