@@ -1372,10 +1372,24 @@ p {
   color: #43b1d7;
   font-size: 1.4rem;
 }
-.faq-media .faq-media-card span {
+.faq-media .faq-media-card p {
   font-size: 0.86rem;
   color: rgba(255, 255, 255, 0.75);
   line-height: 1.5;
+  margin: 0;
+}
+.faq-media .faq-media-card p a {
+  color: #8fd3ea;
+  font-weight: 700;
+}
+.faq-media .faq-media-card p a:hover {
+  color: #FFFFFF;
+}
+.faq-media .faq-media-card__title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.25rem;
 }
 
 .post-card {

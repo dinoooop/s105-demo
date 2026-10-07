@@ -1265,7 +1265,11 @@ p { margin: 0; }
     gap: 1rem;
 
     i { color: $accent; font-size: 1.4rem; }
-    span { font-size: 0.86rem; color: rgba(255,255,255,0.75); line-height: 1.5; }
+    p { font-size: 0.86rem; color: rgba(255,255,255,0.75); line-height: 1.5; margin: 0; }
+
+    p a { color: $accent-light; font-weight: 700; &:hover { color: $white; } }
+
+    &__title { font-size: 1.05rem; font-weight: 800; color: $white; margin-bottom: 0.25rem; }
   }
 }
 
